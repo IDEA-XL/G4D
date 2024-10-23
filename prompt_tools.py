@@ -1,8 +1,8 @@
-import openai
 import re
 import ast
+import os
 
-
+os.environ["OPENAI_API_KEY"] = "" # your OpenAI api key
 def accuracy(question, options, correct_answer, user_answer):
     options_ = list(ast.literal_eval(options))
     choice_map = "ABCDEFGHIJ"
@@ -113,6 +113,7 @@ def score(question, prompt):
 
 def get_openai_response(prompt, model_name,temperature=0,system_prompt=""):
     from openai import OpenAI
+    response = "None"
     if len(system_prompt) == 0:
         messages = [{"role": "user", "content": f"""{prompt}"""}]
     else:
@@ -120,17 +121,18 @@ def get_openai_response(prompt, model_name,temperature=0,system_prompt=""):
         messages = [{"role": "system", "content": f"""{system_prompt}"""},{"role": "user", "content": f"""{prompt}"""}]
     if "gpt" in model_name:
         print("GPT loading {}...".format(model_name))
-        client = OpenAI(api_key="sk-proj-xdEDtjlfSyS5AnuwxSGdT3BlbkFJLlJ2T5YcTj4bDBOSBiBL") # put your openAI API here
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
         completion = client.chat.completions.create(
          model=model_name,
          messages=messages,
         )
+        response = completion.choices[0].message.content
     elif "your model" in model_name:
         # put your model implementation
         temperature = temperature
-        print(model_name)
+        response = "Your model's response"
 
-    return completion.choices[0].message.content
+    return response
 
 def get_G4D_prompt(question, RAI, guidance):
     if RAI == "None":
