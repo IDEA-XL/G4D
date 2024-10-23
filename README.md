@@ -18,6 +18,7 @@ pip install -r requirements.txt
 ```
 
 ### Conduct Inference
+You can find the setting of OpenAI's API or your configured model in prompt_tools.py
 ```python
 python main.py --dataset AutoDAN --mode G4D --model_name gpt-4o-mini
 python main.py --dataset CB-Benign --mode G4D --model_name gpt-4o-mini
