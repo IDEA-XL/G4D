@@ -26,11 +26,14 @@ signal.signal(signal.SIGALRM, handler)
 timeout = 120
 signal.alarm(timeout)
 
-def get_output(model_name, prompt, temperature):
-     return get_openai_response(prompt=prompt,temperature=temperature, model_name=model_name)
+
 
 # attack
-def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = False):
+def attack(result_file, args):
+    dataset = args.dataset
+    model_name = args.model_name
+    mode = args.mode
+    print(dataset)
     if dataset == "CB-RedTeam":
         datafile = pd.read_csv("data/CB_RedTeam.csv")
         items = []
@@ -94,7 +97,7 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
             victim_inputs[i] = victim_input
             print("********Input: \n"+ victim_input)
             try:
-               output = get_openai_response(model_name=model_name, prompt=victim_input, temperature=0.7)
+               output = get_openai_response(model_name=model_name, prompt=victim_input, temperature=args.temperature)
             except Exception as e:
                 output = "Sorry, I didn't understand."
                 results[i] = output
@@ -108,7 +111,7 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
             #agent_output = safety_guard(get_jailbreak_prompts(substance), model_name="gpt-4o-mini")
             #victim_inputs.append(agent_output)
             #print("victim input: "+items[i])
-            output = get_openai_response(model_name=model_name, prompt=items[i], temperature=0.7)
+            output = get_openai_response(model_name=model_name, prompt=items[i], temperature=args.temperature)
             print("\n ********output: \n" + output)
             results[i] = output
             victim_inputs[i] = items[i]
@@ -118,7 +121,7 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
             #agent_output = safety_guard(get_jailbreak_prompts(substance), model_name="gpt-4o-mini")
             #victim_inputs.append(agent_output)
             print("********Input: \n" + self_reminder_baseline(items[i]))
-            output = get_output(model_name=model_name, prompt=self_reminder_baseline(items[i]),  temperature=0.7)
+            output = get_openai_response(model_name=model_name, prompt=self_reminder_baseline(items[i]),  temperature=args.temperature)
             print("\n ********output: \n" + output)
             results[i] = output
             victim_inputs[i] = self_reminder_baseline(items[i])
@@ -130,7 +133,7 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
             RQ = question_paraphraser(items[i], model_name=model_name)
             print("********Input: \n" + question_paraphraser(items[i], model_name=model_name))
             try:
-                output = get_openai_response(model_name=model_name, prompt=RQ, temperature=0.7)
+                output = get_openai_response(model_name=model_name, prompt=RQ, temperature=args.temperature)
             except Exception as e:
                 output = "Sorry, I didn't understand."
             print("\n ********output: \n" + output)
@@ -139,7 +142,7 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
 
         elif mode == "IA":
             jailbreak_queries[i] = items[i]
-            victim_input,output = IA(items[i], model_name=model_name)
+            victim_input,output = IA(items[i], model_name=model_name,temperature=args.temperature)
             print("********Input: \n" + victim_input)
             print("\n ********output: \n" + output)
             results[i] = output
@@ -147,7 +150,7 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
 
         elif mode == "ICD":
             jailbreak_queries[i] = items[i]
-            victim_input,output = ICD(items[i], model_name=model_name)
+            victim_input,output = ICD(items[i], model_name=model_name,temperature=args.temperature)
             print("********Input: \n" + victim_input)
             print("\n ********output: \n" + output)
             results[i] = output
@@ -159,7 +162,8 @@ def attack(result_file, dataset, mode="defense", model_name = "gpt-4o", debug = 
         datafile["jailbreak input"] = jailbreak_queries
         datafile["victim input"] = victim_inputs
         datafile.to_csv(result_file, index=False)
-        if debug:
+        if args.debug:
+            print("debug")
             break
     datafile["response"] = results
     datafile["jailbreak input"] = jailbreak_queries
@@ -174,14 +178,15 @@ def main(args):
     result_path = os.path.join("result","inference",args.dataset,args.model_name)
     os.makedirs(result_path, exist_ok=True)
     result_path = result_path+"/"+args.mode+".csv"
-    attack(result_path, dataset = args.dataset, mode=args.mode, model_name=args.model_name, debug=args.debug)
+    attack(result_path, args)
     print("************Finish************")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', type=str, default='AutoDAN')
     parser.add_argument('--mode', type=str, default="G4D")
-    parser.add_argument('--model_name', type=str, default='vicuna')
+    parser.add_argument('--model_name', type=str, default='gpt-4o-mini')
+    parser.add_argument('--temperature', type=float, default=0.7)
     parser.add_argument('--debug', action='store_true')
     args = parser.parse_args()
     main(args)
