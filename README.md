@@ -19,6 +19,8 @@ based defense framework, Guide for Defense (G4D), which leverages accurate exter
 of user intentions and analytically grounded safety response guidance. Extensive experiments on popular jailbreak attacks and benign datasets show that our G4D can enhance LLM’s robustness against jailbreak attacks on general and domain-specific scenarios without compromising the model’s general functionality.
 
 ## ⚡ Framework
+<center style="color:#C0C0C0"> 
+    <img src="assets/method.png" width="700"/>
 
 
 ## 🚀 Main Results
