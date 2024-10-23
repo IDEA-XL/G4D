@@ -9,6 +9,32 @@ Defense in Large Language Models</a></h2>
 
 <h5 align="center">
 
+##  🛠️ Requirements and Installation
+### Create environment
+```python
+conda create -n G4D python=3.9
+conda activate G4D
+pip install -r requirements.txt
+```
+
+### Conduct Inference
+```python
+python main.py --dataset AutoDAN --mode G4D --model_name gpt-4o-mini
+python main.py --dataset CB-Benign --mode G4D --model_name gpt-4o-mini
+python main.py --dataset MT-bench --mode G4D --model_name gpt-4o-mini
+python main.py --dataset Advbench --mode G4D --model_name gpt-4o-mini
+python main.py --dataset MMLU-pro --mode G4D --model_name gpt-4o-mini
+python main.py --dataset AutoDAN --mode G4D --model_name gpt-4o-mini
+python main.py --dataset CB-RedTeam --mode G4D --model_name gpt-4o-mini
+```
+
+### Conduct evaluation
+```python
+python evaluate.py --dataset MMLU-pro --mode G4D --model_name gpt-4o-mini  
+python evaluate.py --dataset CB-RedTeam --mode G4D --model_name gpt-4o-mini  
+python evaluate.py --dataset CB-Benign --mode G4D --model_name gpt-4o-mini 
+```
+
 
 ## 📰 News
 
@@ -22,12 +48,5 @@ of user intentions and analytically grounded safety response guidance. Extensive
 An ideal LLM defense system should balance robust security measures with seamless usability, ensuring protection against threats without hindering AI systems’ functionality and user experience. It must accurately identify and analyze malicious intent in queries while offering domain-specific protective guidance. Our defense framework employs an inference-stage mechanism comprising an intent detector, a question paraphraser, and a safety analyzer to produce safety instructions for the victim model,shown as below.
 <center style="color:#C0C0C0"> 
     <img src="assets/teaser.png" width="700"/>
-
-
-## 🚀 Main Results
-### Defense Effectiveness and Benign Evaluation
-
-
-##  🛠️ Requirements and Installation
 
 ## 📑 Citation
