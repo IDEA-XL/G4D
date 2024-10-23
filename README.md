@@ -20,7 +20,7 @@ of user intentions and analytically grounded safety response guidance. Extensive
 
 ## ⚡ Framework
 <center style="color:#C0C0C0"> 
-    <img src="assets/method.png" width="700"/>
+    <img src="assets/teaser.pdf" width="700"/>
 
 
 ## 🚀 Main Results
