@@ -4,7 +4,7 @@ Defense in Large Language Models</a></h2>
 
 <h5 align="center">
 
-[Cao He†](https://github.com/CiaoHe), [Weidi Luo†](https://eddyluo1232.github.io/), [Yu Wang*](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](yu-li.github.io)
+[Cao He†](https://github.com/CiaoHe), [Weidi Luo†](https://eddyluo1232.github.io/), [Yu Wang](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](yu-li.github.io)
 
 †:means equal contribution.
 ##  🛠️ Requirements and Installation
