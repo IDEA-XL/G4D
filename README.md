@@ -12,7 +12,7 @@ conda activate G4D
 pip install -r requirements.txt
 ```
 
-### Conduct Inference
+### Conduct Inference with G4D
 ```python
 #You can find the setting of OpenAI's API or your configured model in prompt_tools.py
 python main.py --dataset AutoDAN --mode G4D --model_name gpt-4o-mini
@@ -46,3 +46,15 @@ An ideal LLM defense system should balance robust security measures with seamles
     <img src="assets/teaser.png" width="700"/>
 
 ## 📑 Citation
+```python
+@misc{cao2024guidedefenseg4ddynamic,
+      title={Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced Defense in Large Language Models}, 
+      author={He Cao and Weidi Luo and Yu Wang and Zijing Liu and Bing Feng and Yuan Yao and Yu Li},
+      year={2024},
+      eprint={2410.17922},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2410.17922}, 
+}
+
+```
