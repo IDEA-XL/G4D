@@ -1,4 +1,4 @@
-<h2 align="center"> <a href="">Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced
+<h2 align="center"> <a href="">💡Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced
 Defense in Large Language Models</a></h2>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.  </h2>
 
