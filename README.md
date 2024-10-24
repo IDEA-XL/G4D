@@ -1,14 +1,13 @@
-<h2 align="center"> <a href="">💡Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced
-Defense in Large Language Models</a></h2>
-<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.  </h2>
 
-<h5 align="center">
- [**😀 arxiv**](https://arxiv.org/abs/2410.17922)
+# ⛓‍💥 💡Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced Defense in Large Language Models
 
 
 [Cao He†](https://github.com/CiaoHe), [Weidi Luo†](https://eddyluo1232.github.io/), [Yu Wang](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](yu-li.github.io)
 
-†:means equal contribution.
+（†:means equal contribution）
+
+[**😀 Arxiv**](https://arxiv.org/abs/2410.17922)
+
 ##  🛠️ Requirements and Installation
 ### Create environment
 ```python
