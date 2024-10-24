@@ -2,7 +2,7 @@
 # 💡Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced Defense in Large Language Models
 
 
-[Cao He†](https://github.com/CiaoHe), [Weidi Luo†](https://eddyluo1232.github.io/), [Yu Wang](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](yu-li.github.io)
+[Cao He†](https://github.com/CiaoHe), [Weidi Luo†](https://eddyluo1232.github.io/), [Yu Wang](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](https://yu-li.github.io/)
 
 （†:means equal contribution）
 
@@ -52,6 +52,14 @@ of user intentions and analytically grounded safety response guidance. Extensive
 An ideal LLM defense system should balance robust security measures with seamless usability, ensuring protection against threats without hindering AI systems’ functionality and user experience. It must accurately identify and analyze malicious intent in queries while offering domain-specific protective guidance. Our defense framework employs an inference-stage mechanism comprising an intent detector, a question paraphraser, and a safety analyzer to produce safety instructions for the victim model,shown as below.
 <center style="color:#C0C0C0"> 
     <img src="assets/teaser.png" width="700"/>
+
+## 👻 Dataset Construction
+### Chemistry&Biology-Redteam(CB-RedTeam)
+According to the Laboratory Chemical Safety Summary (LCSS) (PubChem, 2024) on PubChem and NFPA 704 (Wikipedia contributors, 2024),
+We curated a collection of 150 objects across the categories of Bacterial Agents, Biological Toxins, Drugs, Environmental Hazards, Explosive, Radioactive, and Toxic to construct the CB-RedTeam dataset. Except for objects under the Biological Toxins and Bacterial Agent categories, which only have technical names, all other categories include SMILES representations. 
+
+### Chemistry&Biology-Benign (CB-Benign)
+According to the Laboratory Chemical Safety Summary (LCSS) (PubChem, 2024) on PubChem and NFPA 704 (Wikipedia contributors, 2024), We selected the chemical formulas and SMILES representations of 60 common, harmless substances usually in daily life to construct the CB-Benign dataset.
 
 ## 📑 Citation
 ```python
