@@ -33,6 +33,9 @@ python evaluate.py --dataset CB-Benign --mode G4D --model_name gpt-4o-mini
 
 
 ## 📰 News
+| Date       | Event    |
+|------------|----------|
+| **2024/10/24** | 🔥 We have released our paper on Arxiv.|
 
 ## 💡 Abstract
 With the extensive deployment of Large Language Models (LLMs), ensuring their safety has become increasingly critical. However,existing defense methods often struggle with two key issues: (i) inadequate defense capabilities, particularly in domain-specific scenarios like chemistry, where a lack of specialized knowledge can lead to the generation of harmful responses to malicious queries. (ii) over-
