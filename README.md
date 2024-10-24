@@ -3,6 +3,9 @@ Defense in Large Language Models</a></h2>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for the latest update.  </h2>
 
 <h5 align="center">
+[![arxiv](https://img.shields.io/badge/Arxiv-2410.17922-red)](https://arxiv.org/pdf/2410.17922.pdf)
+![Jailbreak Attacks](https://img.shields.io/badge/Jailbreak-Attacks-yellow.svg?style=plastic)
+![Defenses](https://img.shields.io/badge/LargeLanguage-Defenses-orange.svg?style=plastic)
 
 [Cao He†](https://github.com/CiaoHe), [Weidi Luo†](https://eddyluo1232.github.io/), [Yu Wang](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](yu-li.github.io)
 
