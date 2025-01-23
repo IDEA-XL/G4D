@@ -39,6 +39,7 @@ python evaluate.py --dataset CB-Benign --mode G4D --model_name gpt-4o-mini
 ## 📰 News
 | Date       | Event    |
 |------------|----------|
+| **2025/01/22** | 🔥 Congratulations! Our paper is accepted by NAACL 2025 Findings.|
 | **2024/10/24** | 🔥 We have released our paper on Arxiv.|
 | **2024/10/24** | 🔥 We have released our code on GitHub.|
 
