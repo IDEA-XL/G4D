@@ -1,5 +1,5 @@
 
-# 💡 Guide for Defense (G4D): Dynamic Guidance for Robust and Balanced Defense in Large Language Models
+# 💡 Dynamic Guided and Domain Applicable Safeguards for Enhanced Security in Large Language Models
 
 
 [Weidi Luo†](https://eddyluo1232.github.io/), [Cao He†](https://github.com/CiaoHe), [Yu Wang](https://rain305f.github.io/), [Zijing Liu](https://github.com/zj-liu), [Bin Feng](https://xiaocw11.github.io/), [Yao Yuan](https://yao-lab.github.io/), [Yu Li](https://yu-li.github.io/)
